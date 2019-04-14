@@ -1,5 +1,7 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 
+import { AppComponent } from '../app.component';
+
 export enum KEY_CODE {
   RIGHT_ARROW = 39,
   LEFT_ARROW = 37
@@ -11,6 +13,8 @@ export enum KEY_CODE {
   styleUrls: ['./navigation.component.css']
 })
 export class NavigationComponent implements OnInit {
+  constructor(
+    private appComponent: AppComponent) {}
 
   @HostListener('window:keyup', ['$event'])
   keyEvent(event: KeyboardEvent) {
@@ -29,12 +33,10 @@ export class NavigationComponent implements OnInit {
   }
 
   next() {
-    // from here we are going to manipulate Redux Store
-    console.log('next photo');
+    this.appComponent.next();
   }
 
   previous() {
-    // from here we are going to manipulate Redux Store
-    console.log('previous photo');
+    this.appComponent.previous();
   }
 }

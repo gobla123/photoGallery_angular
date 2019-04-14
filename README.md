@@ -1,5 +1,7 @@
 # PhotoGallery
 
+Use keyboard "left" and "right" arrow keys to navigate between the photos.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.0-beta.13.
 
 ## Development server
