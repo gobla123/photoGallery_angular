@@ -14,6 +14,8 @@ import { map } from 'rxjs/operators';
 
 export class AppComponent implements OnInit {
   title = 'Photo Gallery';
+  isClass1Visible: boolean;
+  isClass2Visible: boolean;
 
   ngOnInit() {
     this.imageService.fetchData()
@@ -26,7 +28,10 @@ export class AppComponent implements OnInit {
 
   constructor(
     private ngRedux: NgRedux<IAppState>,
-    private imageService: ImageService) {}
+    private imageService: ImageService) {
+      this.isClass1Visible = true;
+      this.isClass2Visible = false;
+    }
 
   next() {
     this.ngRedux.dispatch({type: 'NEXT'});
@@ -34,5 +39,10 @@ export class AppComponent implements OnInit {
 
   previous() {
     this.ngRedux.dispatch({type: 'PREVIOUS'});
+  }
+
+  zoomChangedHandler(zoomed: boolean) {
+    this.isClass1Visible = !zoomed;
+    this.isClass2Visible = zoomed;
   }
 }

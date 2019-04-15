@@ -1,21 +1,19 @@
 .navButton {
     border: lightblue;
-    padding: 5px 10px;
+    padding-top: 25px;
     border-radius: 4px;
-    background-size:     contain;
-    background-repeat:   no-repeat;
-    background-position: center center;
     border: 1px solid;
     width: 80px;
     height: 45px;
+    left: 50%;
+    margin: 30px;
+    text-align: center;
+    vertical-align: middle;
+    display:inline-block;
 }
 
-#prev {
-    background-image: url(images/iconArrowLeft.png);
+#navigation {
+    width:300px;
+    text-align: center;
+    margin: 0 auto;
 }
-
-#next {
-    background-image: url(images/iconArrowRight.png);
-}
-
-  

@@ -8,7 +8,7 @@ export const INITIAL_STATE: IAppState = {
   index: 0,
   images: [],
   selectedImage: {
-    webformatURL: ''
+    largeImageURL: ''
   }
 };
 
@@ -16,7 +16,7 @@ export function rootReducer(lastState: IAppState, action: any): IAppState {
   switch (action.type) {
 
     case 'IMAGES_LOADED':
-      return  Object.assign({}, lastState, { images: lastState.images.concat(action.images), selectedImage: lastState.images[0]});
+      return  Object.assign({}, lastState, { images: lastState.images.concat(action.images), selectedImage: action.images[0]});
     case 'NEXT':
       return Object.assign({}, lastState, { index: getNextIndex(lastState), images: lastState.images, selectedImage: lastState.images[getNextIndex(lastState)] });
     case 'PREVIOUS':

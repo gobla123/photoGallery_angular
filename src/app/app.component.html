@@ -1,9 +1,10 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
+<div style="text-align:center" [ngClass]="{'zoomOut': isClass1Visible, 'zoomIn': isClass2Visible}">
   <h1>
-    Welcome to {{ title }} in Angular, Redux and RxJS !
+    Welcome to {{ title }} in Angular, Redux and RxJS ! <br>
+    Press on image to zoom it to full screen, press again to get back to normal view.
   </h1>
 </div>
-<app-photo></app-photo>
-<app-navigation></app-navigation>
+<app-navigation [ngClass]="{'zoomOut': isClass1Visible, 'zoomIn': isClass2Visible}"></app-navigation>
+<app-image (zoomed)="zoomChangedHandler($event)"></app-image>
 

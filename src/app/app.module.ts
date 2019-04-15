@@ -9,13 +9,13 @@ import { NgReduxModule, NgRedux, DevToolsExtension } from '@angular-redux/store'
 import { rootReducer, IAppState, INITIAL_STATE } from '../store';
 
 import { HttpClientModule } from '@angular/common/http';
-import { PhotoComponent } from './photo/photo.component';
+import { ImageComponent } from './image/image.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavigationComponent,
-    PhotoComponent,
+    ImageComponent,
   ],
   imports: [
     BrowserModule,
